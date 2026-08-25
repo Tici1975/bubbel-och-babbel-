@@ -4,113 +4,205 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bubbel & Babbel</title>
-
   <style>
+    /* Grundinställningar för den ljusa, lyxiga känslan */
     body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: #fcf9f5;
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff8f5;
+      padding: 0 0 40px 0;
       color: #333;
     }
 
-    header {
+    /* 1. HERO-SEKTION (Toppbilden med runda hörn nertill) */
+    .hero-section {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('omslagsbild.jpeg');
+      background-size: cover;
+      background-position: center;
+      color: white;
       text-align: center;
-      padding: 30px 20px;
+      padding: 60px 20px;
+      border-radius: 0 0 30px 30px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .hero-section h1 {
+      font-size: 32px;
+      margin: 0 0 10px 0;
+      font-family: Georgia, serif;
+    }
+    .hero-section p {
+      font-size: 14px;
+      margin: 0;
+      opacity: 0.9;
     }
 
-    h1 {
-      font-size: 42px;
-      margin: 10px 0;
-    }
-
-    .intro {
-      font-size: 20px;
-      color: #666;
-    }
-
-    .cover {
-      width: 100%;
-      max-width: 900px;
-      display: block;
-      margin: 20px auto;
-      border-radius: 20px;
-    }
-
-    main {
-      max-width: 900px;
-      margin: auto;
+    /* Behållare för allt innehåll under bilden */
+    .main-content {
       padding: 20px;
+      max-width: 500px;
+      margin: 0 auto;
     }
 
-    .section {
-      background: white;
-      padding: 25px;
+    /* Välkomsthuvud */
+    .welcome-header {
+      text-align: center;
+      margin-top: 10px;
+    }
+    .welcome-header h2 {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    /* 2. IKON-MENY (De fyra snabblänkarna) */
+    .icon-menu {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
       margin: 25px 0;
-      border-radius: 20px;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+    .icon-item {
+      background: white;
+      padding: 10px 12px;
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: 500;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      flex: 1 1 calc(50% - 8px); /* Lägger dem 2 och 2 i bredd */
+      box-sizing: border-box;
+      text-align: center;
     }
 
-    h2 {
-      font-size: 28px;
-    }
-
-    a {
-      color: #c45b7c;
+    /* Rubrik för sektionen med träffar */
+    .section-title {
+      font-size: 18px;
+      margin: 30px 0 15px 5px;
       font-weight: bold;
     }
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      color: #777;
+    /* 3. KORT-RUTNÄT (Lägger dina träffar 2 och 2 i bredd) */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    /* Det enskilda vita kortet */
+    .card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden; /* Gör att bilden följer kortets runda hörn */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+    }
+    
+    /* Bilden inuti varje litet kort */
+    .card img {
+      width: 100%;
+      height: 110px;
+      object-fit: cover;
+    }
+
+    /* Texten inuti varje litet kort */
+    .card-body {
+      padding: 12px;
+    }
+    .card-date {
+      font-size: 10px;
+      color: #888;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .card-body h4 {
+      font-size: 14px;
+      margin: 0 0 6px 0;
+    }
+    .card-body p {
+      font-size: 11px;
+      color: #666;
+      margin: 0;
+      line-height: 1.4;
     }
   </style>
 </head>
-
 <body>
 
+  <!-- 1. HERO-SEKTION -->
+  <header class="hero-section">
+    <h1>Bubbel & Babbel 🥂</h1>
+    <p>Våra träffar, minnen, bilder och roliga stunder tillsammans! ❤️</p>
+  </header>
 
-  <main>
-
-    <img src="omslagsbild.jpeg" alt="Bubbel & Babbel" class="cover">
-
-    <div class="section">
+  <!-- HUVUDINNEHÅLL -->
+  <main class="main-content">
+    
+    <!-- Välkomsttext -->
+    <div class="welcome-header">
       <h2>🌸 Välkommen till Bubbel & Babbel!</h2>
-      <p>
-        Här samlar vi våra träffar under året – bilder, minnen,
-        berättelser och annat som vi vill kunna gå tillbaka till.
+      <p style="color: #555; font-size: 14px; line-height: 1.5;">
+        Här samlar vi våra träffar under året – bilder, minnen, berättelser och annat som vi vill kunna gå tillbaka till.
       </p>
     </div>
 
-    <div class="section">
-      <h2>📸 Våra träffar</h2>
-      <p>
-        Här kommer vi att lägga in våra olika träffar,
-        med bilder och information om vad vi gjorde.
-      </p>
+    <!-- 2. IKON-MENY -->
+    <div class="icon-menu">
+      <div class="icon-item">👤 Om oss</div>
+      <div class="icon-item">📸 Bilder & Minnen</div>
+      <div class="icon-item">📅 Kommande</div>
+      <div class="icon-item">📍 Hitta hit</div>
     </div>
 
-    <div class="section">
-      <h2>💬 Våra minnen</h2>
-      <p>
-        En plats för roliga historier, citat och sådant
-        som bara Bubbel & Babbel förstår. 🥂😂
-      </p>
-    </div>
+    <!-- Sektionsrubrik -->
+    <div class="section-title">📸 Våra träffar</div>
 
-    <div class="section">
-      <h2>🔗 Bra länkar</h2>
-      <p>
-        Här kan vi lägga länkar till restauranger, aktiviteter,
-        resor och annat vi vill komma ihåg.
-      </p>
+    <!-- 3. KORT-RUTNÄT -->
+    <div class="card-grid">
+      
+      <!-- Kort 1 -->
+      <div class="card">
+        <img src="traff1.jpg" alt="Träff 1">
+        <div class="card-body">
+          <span class="card-date">30 April 2024</span>
+          <h4>Träff 1 - Valborg</h4>
+          <p>Här kommer vi att lägga in information om vad vi gjorde.</p>
+        </div>
+      </div>
+
+      <!-- Kort 2 -->
+      <div class="card">
+        <img src="traff2.jpg" alt="Träff 2">
+        <div class="card-body">
+          <span class="card-date">15 Juni 2024</span>
+          <h4>Träff 2 - Sommar</h4>
+          <p>Här kommer vi att lägga in information om vad vi gjorde.</p>
+        </div>
+      </div>
+
+      <!-- Kort 3 (Exempelkort - ta bort eller ändra) -->
+      <div class="card">
+        <img src="traff3.jpg" alt="Träff 3">
+        <div class="card-body">
+          <span class="card-date">12 Aug 2024</span>
+          <h4>Träff 3 - Kräftskiva</h4>
+          <p>Här kommer vi att lägga in information om vad vi gjorde.</p>
+        </div>
+      </div>
+
+      <!-- Kort 4 (Exempelkort - ta bort eller ändra) -->
+      <div class="card">
+        <img src="traff4.jpg" alt="Träff 4">
+        <div class="card-body">
+          <span class="card-date">24 Okt 2024</span>
+          <h4>Träff 4 - Höstmys</h4>
+          <p>Här kommer vi att lägga in information om vad vi gjorde.</p>
+        </div>
+      </div>
+
     </div>
 
   </main>
-
-  <footer>
-    Bubbel & Babbel ❤️🥂
-  </footer>
 
 </body>
 </html>
