@@ -44,6 +44,13 @@
       margin: 0 auto;
     }
 
+    /* Ny behållare för träffarna så att 3 i bredd får plats ordentligt */
+    .timeline-content {
+      padding: 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
     /* Välkomsthuvud */
     .welcome-header {
       text-align: center;
@@ -81,50 +88,82 @@
       font-weight: bold;
     }
 
-    /* 3. KORT-RUTNÄT (Lägger dina träffar 2 och 2 i bredd) */
-    .card-grid {
+    /* NYA KORT-RUTNÄT (Tredelad och Tvådelad) */
+    .grid-3-col {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px; /* Något större mellanrum mellan korten */
+      margin-bottom: 30px;
     }
 
-    /* Det enskilda vita kortet */
+    .grid-2-col {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      margin-bottom: 30px;
+    }
+
+    /* Det enskilda vita kortet - Nu mer synligt och tydligt */
     .card {
-      background: white;
+      background: #ffffff;
+      border: 1px solid #e2ded8; /* Tydligare men mjuk konturlinje */
       border-radius: 20px;
       overflow: hidden; /* Gör att bilden följer kortets runda hörn */
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.07); /* Kraftigare skugga för bättre djup */
       display: flex;
       flex-direction: column;
+      transition: transform 0.2s ease;
+    }
+    
+    /* Liten lyxig effekt när man för muspekaren över kortet */
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
     
     /* Bilden inuti varje litet kort */
     .card img {
       width: 100%;
-      height: 110px;
+      height: 130px; /* Gjorde bilden lite högre för bättre synlighet */
       object-fit: cover;
     }
 
     /* Texten inuti varje litet kort */
     .card-body {
-      padding: 12px;
+      padding: 16px; /* Mer luft inuti kortet */
     }
     .card-date {
       font-size: 10px;
-      color: #888;
+      color: #b38f6d; /* Lyxig guld/brun färg på datumet */
       text-transform: uppercase;
       display: block;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
+      font-weight: 600;
+      letter-spacing: 1px;
     }
     .card-body h4 {
-      font-size: 14px;
-      margin: 0 0 6px 0;
+      font-size: 15px;
+      margin: 0 0 10px 0;
+      color: #1a1a1a;
+      line-height: 1.3;
     }
     .card-body p {
-      font-size: 11px;
-      color: #666;
+      font-size: 12px;
+      color: #555;
       margin: 0;
-      line-height: 1.4;
+      line-height: 1.6; /* Mer utrymme mellan raderna */
+    }
+    .menu-section {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px dashed #eee; /* Enkel avdelare för maten */
+    }
+
+    /* Mobilanpassning: Stapla korten på höjden om skärmen är liten */
+    @media (max-width: 768px) {
+      .grid-3-col, .grid-2-col {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -132,100 +171,80 @@
 
   <!-- 1. HERO-SEKTION -->
   <header class="hero-section">
-    <!-- Den gamla textrubriken är borttagen härifrån så att den inte dubbleras med bilden -->
-    </header>
+  </header>
 
- <!-- HUVUDINNEHÅLL -->
-<main class="main-content">
-  <!-- Välkomsttext -->
-  <div class="welcome-header">
-    <h2>🌸 Välkommen till Bubbel & Babbel!</h2>
-    <p style="color: #555; font-size: 14px; line-height: 1.5;">
-      Här samlar vi våra träffar under året – bilder, minnen, berättelser och annat som vi vill kunna gå tillbaka till.
-    </p>
-  </div>
+  <!-- HUVUDINNEHÅLL -->
+  <main class="main-content">
+    <!-- Välkomsttext -->
+    <div class="welcome-header">
+      <h2>🌸 Välkommen till Bubbel & Babbel!</h2>
+      <p style="color: #555; font-size: 14px; line-height: 1.5;">
+        Här samlar vi våra träffar under året – bilder, minnen, berättelser och annat som vi vill kunna gå tillbaka till.
+      </p>
+    </div>
 
-  <!-- 2. IKON-MENY (Nu med Om oss-rutan inbyggd) -->
-  <div class="icon-menu" style="position: relative;">
+    <!-- 2. IKON-MENY (Nu med Om oss-rutan inbyggd) -->
+    <div class="icon-menu" style="position: relative;">
+      <details id="om-oss-detaljer" style="display: inline-block; width: 100%;">
+        <summary class="icon-item" style="list-style: none; cursor: pointer; display: inline-block;">
+          👤 Om oss
+        </summary>
+        <div style="background: white; padding: 20px; border-radius: 20px; margin-top: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: left; width: 100%; box-sizing: border-box;">
+          <h3 style="margin-top: 0; font-size: 18px; color: #333; margin-bottom: 12px;">Bubbel och Babbel tjejerna</h3>
+          <img src="om-oss.jpeg" style="width: 100%; height: auto; border-radius: 15px; margin-bottom: 15px; object-fit: cover;">
+          <p style="font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 0;">
+            "Vi är ett kompisgäng som älskar att ses, hitta på roliga aktiviteter och dricka bubbel. Den här sidan är till för att samla alla våra fina minnen under året"
+          </p>
+        </div>
+      </details>
+
+      <div class="icon-item" style="cursor: pointer;">📸 Bilder & Minnen</div>
+      <div class="icon-item" style="cursor: pointer;">📅 Kommande</div>
+      <div class="icon-item" style="cursor: pointer;">📍 Hitta hit</div>
+    </div>
+  </main>
+
+  <!-- BEHÅLLARE FÖR TIDSLINJEN -->
+  <div class="timeline-content">
     
-    <!-- OM OSS SOM EN DEL AV MENYN -->
-    <details id="om-oss-detaljer" style="display: inline-block; width: 100%;">
-      <summary class="icon-item" style="list-style: none; cursor: pointer; display: inline-block;">
-        👤 Om oss
-      </summary>
-
-      <!-- Rutan som fälls ut under hela menyn -->
-      <div style="background: white;
-        padding: 20px;
-        border-radius: 20px;
-        margin-top: 15px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        text-align: left;
-        width: 100%;
-        box-sizing: border-box;">
-        
-        <h3 style="margin-top: 0; font-size: 18px; color: #333; margin-bottom: 12px;">Bubbel och Babbel tjejerna</h3>
-        
-        <!-- Bilden inuti rutan -->
-        <img src="om-oss.jpeg" style="width: 100%; height: auto; border-radius: 15px; margin-bottom: 15px; object-fit: cover;">
-        
-        <!-- Texten inuti rutan -->
-        <p style="font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 0;">
-          "Vi är ett kompisgäng som älskar att ses, hitta på roliga aktiviteter och dricka bubbel. Den här sidan är till för att samla alla våra fina minnen under året"
-        </p>
-      </div>
-    </details>
-
-    <!-- Övriga menyval -->
-    <div class="icon-item" style="cursor: pointer;">📸 Bilder & Minnen</div>
-    <div class="icon-item" style="cursor: pointer;">📅 Kommande</div>
-    <div class="icon-item" style="cursor: pointer;">📍 Hitta hit</div>
-  </div>
-</main>
-    <!-- Sektionsrubrik -->
     <div class="section-title">📸 Våra träffar</div>
-<!-- Importera det eleganta typsnittet Cinzel från Google Fonts -->
-<link rel="preconnect" href="https://googleapis.com">
-<link rel="preconnect" href="https://gstatic.com" crossorigin>
-<link href="https://googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
 
-<style>
-  .year-divider {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    margin: 40px 0;
-  }
+    <!-- Importera det eleganta typsnittet Cinzel från Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com" rel="stylesheet">
 
-  /* Skapar linjerna på sidorna */
-  .year-divider::before,
-  .year-divider::after {
-    content: '';
-    flex: 1;
-    border-bottom: 2px solid #ccc; /* Ändra tjocklek och färg här */
-  }
+    <style>
+      .year-divider {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin: 40px 0;
+      }
+      .year-divider::before,
+      .year-divider::after {
+        content: '';
+        flex: 1;
+        border-bottom: 2px solid #ccc;
+      }
+      .year-divider:not(:empty)::before { margin-right: 20px; }
+      .year-divider:not(:empty)::after { margin-left: 20px; }
+      .year-text {
+        font-family: 'Cinzel', serif;
+        font-size: 2rem;
+        font-weight: 600;
+        letter-spacing: 6px;
+        color: #1a1a1a;
+      }
+    </style>
 
-  /* Avstånd mellan linje och text */
-  .year-divider:not(:empty)::before { margin-right: 20px; }
-  .year-divider:not(:empty)::after { margin-left: 20px; }
+    <!-- ÅRTAL -->
+    <div class="year-divider">
+      <span class="year-text">2023</span>
+    </div>
 
-  /* Styling för årtalet */
-  .year-text {
-    font-family: 'Cinzel', serif;
-    font-size: 2rem;
-    font-weight: 600;
-    letter-spacing: 6px; /* Glesar ut siffrorna för en lyxig känsla */
-    color: #1a1a1a;
-  }
-</style>
-
-<!-- Kopiera denna block-kod för varje nytt årtal du vill ha -->
-<div class="year-divider">
-  <span class="year-text">2023</span>
-</div>
-
-    <!-- 3. KORT-RUTNÄT -->
-    <div class="card-grid">
+    <!-- RAD 1: 3 KORT I BREDD -->
+    <div class="grid-3-col">
       
       <!-- Kort 1 -->
       <div class="card">
@@ -233,10 +252,12 @@
         <div class="card-body">
           <span class="card-date">15 April 2023</span>
           <h4>Träff 1 - Intro Bubbel & Babbel hos Tina</h4>
-          <p>Bubbelprovning,lära känna varandra och regler.
-          Förrätt:Filoknyten med spenat/chevre
-          Varmrätt: Tinas special kyckling ajvar med fetaost & klyftpotatis
-          Dessert: Pannacotta med bär</p>
+          <p>Bubbelprovning, lära känna varandra och regler.</p>
+          <div class="menu-section">
+            <p><strong>Förrätt:</strong> Filoknyten med spenat/chevre</p>
+            <p><strong>Varmrätt:</strong> Kyckling ajvar med fetaost & klyftpotatis</p>
+            <p><strong>Dessert:</strong> Pannacotta med bär</p>
+          </div>
         </div>
       </div>
 
@@ -244,42 +265,42 @@
       <div class="card">
         <img src="traff2.jpg" alt="Träff 2">
         <div class="card-body">
-          <span class="card-date">9 september2023</span>
+          <span class="card-date">9 September 2023</span>
           <h4>Träff 2 - Vandring Nävsjön</h4>
-          <p>Maria & Maria anordnar lunch Ceasarsallad m bubbel och vandring runt Nävsjön.
-          Middag serveras hos Maria på Fridasväg
-          Förrätt: gratinerad chévre på salladsblad med rödbetor & pinjenötter
-          Varmrätt:Boeuf bourgogne med potatispuré
-          Dessert: Key lime paj</p>
+          <p>Maria & Maria anordnar lunch Ceasarsallad m bubbel och vandring runt Nävsjön.</p>
+          <p style="margin-top: 5px;">Middag serveras hos Maria på Fridasväg.</p>
+          <div class="menu-section">
+            <p><strong>Förrätt:</strong> Gratinerad chévre på salladsblad med rödbetor & pinjenötter</p>
+            <p><strong>Varmrätt:</strong> Boeuf bourgogne med potatispuré</p>
+            <p><strong>Dessert:</strong> Key lime paj</p>
+          </div>
         </div>
       </div>
       
-      <!-- Kort 3 (Exempelkort - ta bort eller ändra) -->
+      <!-- Kort 3 -->
       <div class="card">
         <img src="traff3.jpg" alt="Träff 3">
         <div class="card-body">
           <span class="card-date">25 Nov 2023</span>
           <h4>Träff 3 - Tomten & Bocken</h4>
-          <p>Anordnare Tici & Karin hemma hos Tici
-            Förrätt: Våffla med cremé fraiche, Rom, dill och gräslök
-            Varmrätt: kyckling pasta med soltorkade tomater
-            Dessert: Cheesecake i glas med lemoncurd
-          Show på Rosvalla och efteråt drink på Voyage</p>
-        </div>
-      </div>
-      
-      <!-- Kort 4 (Exempelkort - ta bort eller ändra) -->
-      <div class="card">
-        <img src="traff4.jpg" alt="Träff 4">
-        <div class="card-body">
-          <span class="card-date">24 Okt 2024</span>
-          <h4>Träff 4 - Höstmys</h4>
-          <p>Här kommer vi att lägga in information om vad vi gjorde.</p>
+          <p>Anordnare Tici & Karin hemma hos Tici.</p>
+          <div class="menu-section">
+            <p><strong>Förrätt:</strong> Våffla med cremé fraiche, Rom, dill och gräslök</p>
+            <p><strong>Varmrätt:</strong> Kycklingpasta med soltorkade tomater</p>
+            <p><strong>Dessert:</strong> Cheesecake i glas med lemoncurd</p>
+          </div>
+          <p style="margin-top: 10px; font-style: italic; color: #666;">Show på Rosvalla och efteråt drink på Voyage</p>
         </div>
       </div>
 
+    </div> <!-- Slut på raden med 3 kort -->
+
+    <!-- RAD 2: HÄR HAMNAR DINA NÄSTA TRÄFFAR (2 OCH 2) -->
+    <div class="grid-2-col">
+      <!-- Här fyller du på med nästa par kort när det blir dags! -->
     </div>
 
-  </main>
+  </div>
+
 </body>
 </html>
