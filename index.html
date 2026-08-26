@@ -184,7 +184,45 @@
 </main>
     <!-- Sektionsrubrik -->
     <div class="section-title">📸 Våra träffar</div>
-<div class="year-divider-thick">2023</div>
+<!-- Importera det eleganta typsnittet Cinzel från Google Fonts -->
+<link rel="preconnect" href="https://googleapis.com">
+<link rel="preconnect" href="https://gstatic.com" crossorigin>
+<link href="https://googleapis.com/css2?family=Cinzel:wght@600&display=swap" rel="stylesheet">
+
+<style>
+  .year-divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  /* Skapar linjerna på sidorna */
+  .year-divider::before,
+  .year-divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 2px solid #ccc; /* Ändra tjocklek och färg här */
+  }
+
+  /* Avstånd mellan linje och text */
+  .year-divider:not(:empty)::before { margin-right: 20px; }
+  .year-divider:not(:empty)::after { margin-left: 20px; }
+
+  /* Styling för årtalet */
+  .year-text {
+    font-family: 'Cinzel', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 6px; /* Glesar ut siffrorna för en lyxig känsla */
+    color: #1a1a1a;
+  }
+</style>
+
+<!-- Kopiera denna block-kod för varje nytt årtal du vill ha -->
+<div class="year-divider">
+  <span class="year-text">2023</span>
+</div>
 
     <!-- 3. KORT-RUTNÄT -->
     <div class="card-grid">
@@ -215,17 +253,21 @@
           Dessert: Key lime paj</p>
         </div>
       </div>
-
+      
       <!-- Kort 3 (Exempelkort - ta bort eller ändra) -->
       <div class="card">
         <img src="traff3.jpg" alt="Träff 3">
         <div class="card-body">
-          <span class="card-date">12 Aug 2024</span>
-          <h4>Träff 3 - Kräftskiva</h4>
-          <p>Här kommer vi att lägga in information om vad vi gjorde.</p>
+          <span class="card-date">25 Nov 2023</span>
+          <h4>Träff 3 - Tomten & Bocken</h4>
+          <p>Anordnare Tici & Karin hemma hos Tici
+            Förrätt: Våffla med cremé fraiche, Rom, dill och gräslök
+            Varmrätt: kyckling pasta med soltorkade tomater
+            Dessert: Cheesecake i glas med lemoncurd
+          Show på Rosvalla och efteråt drink på Voyage</p>
         </div>
       </div>
-
+      
       <!-- Kort 4 (Exempelkort - ta bort eller ändra) -->
       <div class="card">
         <img src="traff4.jpg" alt="Träff 4">
