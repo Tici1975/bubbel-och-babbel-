@@ -123,10 +123,10 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
     
-    /* Bilden inuti varje litet kort */
+    /* 📸 HÄR JUSTERAS BILDERNAS STORLEK (Ändrad från 140px till 220px) */
     .card img {
       width: 100%;
-      height: 140px;
+      height: 220px;
       object-fit: cover;
     }
 
@@ -169,6 +169,9 @@
     @media (max-width: 768px) {
       .grid-3-col, .grid-2-col {
         grid-template-columns: 1fr;
+      }
+      .card img {
+        height: 200px; /* Något lägre på mobilen */
       }
     }
   </style>
@@ -216,8 +219,8 @@
     <div class="section-title">📸 Våra träffar</div>
 
     <!-- Importera det eleganta typsnittet Cinzel från Google Fonts -->
-    <link rel="preconnect" href="https://googleapis.com">
-    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://googleapis.com" rel="stylesheet">
 
     <style>
@@ -316,8 +319,3 @@
 
 
     <!-- ==================== ÅRTAL 2023 (LÄNGRE NER) ==================== -->
-    <div class="year-divider">
-      <span class="year-text">2023</span>
-    </div>
-
-    <!-- RAD FÖR 2023: 3 KORT I BREDD -->
