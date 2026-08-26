@@ -135,66 +135,53 @@
     <!-- Den gamla textrubriken är borttagen härifrån så att den inte dubbleras med bilden -->
     </header>
 
-  <!-- HUVUDINNEHÅLL -->
-  <main class="main-content">
+ <!-- HUVUDINNEHÅLL -->
+<main class="main-content">
+  <!-- Välkomsttext -->
+  <div class="welcome-header">
+    <h2>🌸 Välkommen till Bubbel & Babbel!</h2>
+    <p style="color: #555; font-size: 14px; line-height: 1.5;">
+      Här samlar vi våra träffar under året – bilder, minnen, berättelser och annat som vi vill kunna gå tillbaka till.
+    </p>
+  </div>
 
-  <!-- HÄR BÖRJAR KNAPPEN OCH RUTAN -->
-  <details id="om-oss-detaljer" style="margin: 25px 0;">
+  <!-- 2. IKON-MENY (Nu med Om oss-rutan inbyggd) -->
+  <div class="icon-menu" style="position: relative;">
     
-    <!-- Den här delen fungerar som din klickbara knapp -->
-    <summary class="icon-item" style="list-style: none; cursor: pointer; text-decoration: none; color: inherit;">
-      om oss
-    </summary>
+    <!-- OM OSS SOM EN DEL AV MENYN -->
+    <details id="om-oss-detaljer" style="display: inline-block; width: 100%;">
+      <summary class="icon-item" style="list-style: none; cursor: pointer; display: inline-block;">
+        👤 Om oss
+      </summary>
 
-    <!-- Det här är rutan som öppnas och visas när man klickar på knappen ovan -->
-    <div style="background: white;
-      padding: 20px;
-      border-radius: 20px;
-      margin-top: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-      
-      <h3 style="margin-top: 0;
-        font-size: 18px;
-        color: #333;
-        margin-bottom: 12px;">om oss</h3>
-      
-      <!-- Bilden inuti rutan -->
-      <img src="om-oss.jpeg"
-        style="width: 100%;
-        height: auto;
-        border-radius: 15px;
-        margin-bottom: 15px;
-        object-fit: cover;">
-      
-      <!-- Texten inuti rutan -->
-      <p style="font-size: 13px;
-        color: #555;
-        line-height: 1.6;
-        margin-bottom: 0;">
-        "Vi är ett kompisgäng som älskar att ses, hitta på roliga aktiviteter och dricka bubbel. Den här sidan är till för att samla alla våra fina minnen under året"
-      </p>
-    </div>
+      <!-- Rutan som fälls ut under hela menyn -->
+      <div style="background: white;
+        padding: 20px;
+        border-radius: 20px;
+        margin-top: 15px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        text-align: left;
+        width: 100%;
+        box-sizing: border-box;">
+        
+        <h3 style="margin-top: 0; font-size: 18px; color: #333; margin-bottom: 12px;">om oss</h3>
+        
+        <!-- Bilden inuti rutan -->
+        <img src="om-oss.jpeg" style="width: 100%; height: auto; border-radius: 15px; margin-bottom: 15px; object-fit: cover;">
+        
+        <!-- Texten inuti rutan -->
+        <p style="font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 0;">
+          "Vi är ett kompisgäng som älskar att ses, hitta på roliga aktiviteter och dricka bubbel. Den här sidan är till för att samla alla våra fina minnen under året"
+        </p>
+      </div>
+    </details>
 
-  </details>
-  <!-- HÄR SLUTAR KNAPPEN OCH RUTAN -->
-
+    <!-- Övriga menyval -->
+    <div class="icon-item" style="cursor: pointer;">📸 Bilder & Minnen</div>
+    <div class="icon-item" style="cursor: pointer;">📅 Kommande</div>
+    <div class="icon-item" style="cursor: pointer;">📍 Hitta hit</div>
+  </div>
 </main>
-    <!-- Välkomsttext -->
-    <div class="welcome-header">
-      <h2>🌸 Välkommen till Bubbel & Babbel!</h2>
-      <p style="color: #555; font-size: 14px; line-height: 1.5;">
-        Här samlar vi våra träffar under året – bilder, minnen, berättelser och annat som vi vill kunna gå tillbaka till.
-      </p>
-    </div>
-
-    <!-- 2. IKON-MENY -->
-    <div class="icon-menu">
-      <div class="icon-item">👤 Om oss</div>
-      <div class="icon-item">📸 Bilder & Minnen</div>
-      <div class="icon-item">📅 Kommande</div>
-      <div class="icon-item">📍 Hitta hit</div>
-    </div>
-
     <!-- Sektionsrubrik -->
     <div class="section-title">📸 Våra träffar</div>
 
