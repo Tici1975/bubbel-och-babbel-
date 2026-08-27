@@ -192,28 +192,33 @@
       </p>
     </div>
 
-    <!-- 2. IKON-MENY -->
-    <div class="icon-menu" style="position: relative;">
-      <details id="om-oss-detaljer" style="display: inline-block; width: 100%;">
-        <summary class="icon-item" style="list-style: none; cursor: pointer; display: inline-block;">
-          👤 Om oss
-        </summary>
-        <div style="background: white; padding: 20px; border-radius: 20px; margin-top: 15px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); text-align: left; width: 100%; box-sizing: border-box;">
-          <h3 style="margin-top: 0; font-size: 18px; color: #333; margin-bottom: 12px;">Bubbel och Babbel tjejerna</h3>
-          <img src="om-oss.jpg" style="width: 100%; height: auto; border-radius: 15px; margin-bottom: 15px; object-fit: cover;">
-          <p style="font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 0;">
-            "Vi är ett kompisgäng som älskar att ses, hitta på roliga aktiviteter och dricka bubbel. Den här sidan är till för att samla alla våra fina minnen under året"
-          </p>
-        </div>
-      </details>
-
-          <a href="./bilder/" target="_blank" style="text-decoration: none; color: inherit;">
-  <div class="icon-item" style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 15px; border: 1px solid #ccc; border-radius: 8px; cursor: pointer; font-family: sans-serif; background-color: #f9f9f9;">
-    <span style="font-size: 20px;">📸</span>
-    <span style="font-weight: bold;">Bilder & Minnen</span>
+  <!-- 2. IKON-MENY -->
+<div class="icon-menu" style="display: flex; gap: 15px; flex-wrap: wrap; margin-bottom: 20px; font-family: sans-serif;">
+  
+  <!-- OM OSS -->
+  <div style="flex: 1; min-width: 160px; position: relative;">
+    <details id="om-oss-detaljer" style="width: 100%;">
+      <summary class="icon-item" style="list-style: none; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 15px; border: 1px solid #e0e0e0; border-radius: 12px; cursor: pointer; font-weight: bold; background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: all 0.2s ease;">
+        <span>👤</span> Om oss
+      </summary>
+      <div style="position: absolute; top: 100%; left: 0; background: white; padding: 20px; border-radius: 20px; margin-top: 10px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); text-align: left; width: 100%; box-sizing: border-box; z-index: 10;">
+        <h3 style="margin-top: 0; font-size: 18px; color: #333; margin-bottom: 12px;">Bubbel och Babbel tjejerna</h3>
+        <img src="om-oss.jpg" style="width: 100%; height: auto; border-radius: 15px; margin-bottom: 15px; object-fit: cover;">
+        <p style="font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 0;">
+          "Vi är ett kompisgäng som älskar att ses, hitta på roliga aktiviteter och dricka bubbel. Den här sidan är till för att samla alla våra fina minnen under året"
+        </p>
+      </div>
+    </details>
   </div>
-</a>
 
+  <!-- BILDER & MINNEN -->
+  <a href="./bilder/" target="_blank" style="text-decoration: none; color: inherit; flex: 1; min-width: 160px;">
+    <div class="icon-item" style="display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px 15px; border: 1px solid #e0e0e0; border-radius: 12px; cursor: pointer; font-weight: bold; background-color: #ffffff; box-shadow: 0 2px 5px rgba(0,0,0,0.02); transition: all 0.2s ease;">
+      <span style="font-size: 18px;">📸</span> Bilder & Minnen
+    </div>
+  </a>
+
+</div>
       <div class="icon-item" style="cursor: pointer;">📅 Kommande</div>
       <div class="icon-item" style="cursor: pointer;">📍 Hitta hit</div>
     </div>
