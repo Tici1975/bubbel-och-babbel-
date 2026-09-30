@@ -218,11 +218,30 @@
     </div>
   </a>
 
-</div>
+      </div>
       <div class="icon-item" style="cursor: pointer;">📅 Kommande</div>
-      <div class="icon-item" style="cursor: pointer;">📍 Hitta hit</div>
+      <!-- Vi lägger till id="varan-lat-knapp" på din knapp -->
+      <div id="varan-lat-knapp" class="icon-item" style="cursor: pointer;">Våran låt</div>
     </div>
   </main>
+
+  <!-- Dold ljudspelare: Lägg din mp3-fil i samma mapp på GitHub och döp den till lat.mp3 -->
+  <audio id="musik-filer" src="lat.mp3"></audio>
+
+  <!-- Skriptet som styr att musiken spelas vid klick -->
+  <script>
+    const latKnapp = document.getElementById('varan-lat-knapp');
+    const ljudFil = document.getElementById('musik-filer');
+
+    latKnapp.addEventListener('click', function() {
+      // Om låten redan spelas, startar den om från början vid nytt klick
+      ljudFil.currentTime = 0; 
+      
+      ljudFil.play().catch(function(error) {
+        console.log("Webbläsaren blockerade autouppspelning. Användaren måste interagera först:", error);
+      });
+    });
+  </script>
 
   <!-- BEHÅLLARE FÖR TIDSLINJEN -->
   <div class="timeline-content">
